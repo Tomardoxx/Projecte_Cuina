@@ -1,0 +1,99 @@
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kebab - Associació de Cuina</h3>
+                <p>Nostra web de cuina</p>
+                <p>Col·laboradors: Dario i Moussa</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Xarxes Socials</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Política</h3>
+                <ul>
+                    <li><a href="#" class="cookie-policy">Política de Cookies</a></li>
+                    <li><a href="#" class="privacy-policy">Política de Privacitat</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Formes de Pagament</h3>
+                <ul>
+                    <li>Visa</li>
+                    <li>Mastercard</li>
+                    <li>PayPal</li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2026 Kebab. Tots els drets reservats.</p>
+    </footer>
+
+    <!-- Popup Política de Cookies -->
+    <div id="cookiePopup" class="popup">
+        <div class="popup-content">
+            <span class="close" data-popup="cookiePopup">&times;</span>
+            <h2>Política de Cookies</h2>
+            <p>Utilitzem cookies per millorar la teva experiència d'usuari. Aquestes cookies ens ajuden a entendre com utilitzes el nostre lloc web i ens permeten recordar les teves preferències.</p>
+            <p>Què són les cookies?</p>
+            <p>Tipus de cookies que utilitzem:</p>
+            <ul>
+                <li>Cookies de sessió: Esborrades al tancar el navegador.</li>
+                <li>Cookies persistents: Romanen al teu dispositiu.</li>
+            </ul>
+            <p>Pots controlar i eliminar les cookies a través de la configuració del teu navegador.</p>
+        </div>
+    </div>
+
+    <!-- Popup Política de Privacitat -->
+    <div id="privacyPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" data-popup="privacyPopup">&times;</span>
+            <h2>Política de Privacitat</h2>
+            <p>En Kebab - Associació de Cuina, ens comprometem a protegir la teva privadesa. Aquesta política descriu com recopilem, utilitzem i protegim la teva informació personal.</p>
+            <p>Informació que recopilem:</p>
+            <ul>
+                <li>Nom i correu electrònic</li>
+                <li>Informació de navegació</li>
+                <li>Dades de preferències personals</li>
+            </ul>
+            <p>Com utilitzem la teva informació:</p>
+            <p>Utilitzem la teva informació per millorar els nostres serveis, personalitzar la teva experiència i contactar-te quan sigui necessari.</p>
+            <p>Les teves dades estan protegides amb mesures de seguretat estàndard i no seran compartides amb tercers sense el teu consentiment.</p>
+        </div>
+    </div>
+    <script>
+    // Abrir popups
+        document.querySelector('.cookie-policy').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('cookiePopup').style.display = 'block';
+        });
+
+        document.querySelector('.privacy-policy').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('privacyPopup').style.display = 'block';
+        });
+
+        // Cerrar popups
+        document.querySelectorAll('.close').forEach(function(closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                const popupId = this.getAttribute('data-popup');
+                document.getElementById(popupId).style.display = 'none';
+            });
+        });
+
+        // Cerrar popup al hacer click fuera
+        window.addEventListener('click', function(e) {
+            const cookiePopup = document.getElementById('cookiePopup');
+            const privacyPopup = document.getElementById('privacyPopup');
+            
+            if (e.target === cookiePopup) cookiePopup.style.display = 'none';
+            if (e.target === privacyPopup) privacyPopup.style.display = 'none';
+        });
+    </script>

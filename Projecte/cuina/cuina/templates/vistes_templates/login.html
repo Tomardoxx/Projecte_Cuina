@@ -1,0 +1,34 @@
+<!--LA FORMA CORRECTE D'UTILITZAR EL TEMPLATE!!!!!-->
+<!-- agafem plantilla base -->
+{% extends "base.html" %}
+<!-- obligatori pel CSS -->
+{% load static %} 
+
+<!-- importem el block que tenim com a title i per poder relacionar HTML i CSS important static què és on 
+els tenim aquests fitxers de l'app -->
+{% block title %}
+Login
+{% endblock %}
+
+{% block link_css %}
+    <link rel="stylesheet" href="{% static 'vistes_templates/css/register-login.css' %}">
+{% endblock %}
+
+{% block content %}
+    <form class="formulari_registre" action="POST">
+        <h2 style="text-align:center; margin-bottom: 20px;">Iniciar Sesión</h2>
+
+        <label for="usuari">Usuari:</label>
+        <input id="usuari" name="usuari" placeholder="Introduce tu usuario" type="text"><br>
+
+        <label for="contrasenya">Contrasenya:</label>
+        <input id="contrasenya" name="contrasenya" placeholder="Introduce tu contraseña" type="password"><br>
+
+        <button href="index.html">Iniciar Sesión</button>
+
+        <p style="text-align:center; margin-top:15px;">
+            ¿No tienes cuenta? <a href="{% url 'register' %}">Regístrate aquí</a><br><br>
+            <a href="{% url 'home' %}">Entrar como invitado</a>
+        </p>
+    </form>
+{% endblock content %}

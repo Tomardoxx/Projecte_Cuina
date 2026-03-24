@@ -2,21 +2,18 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    
     # url app, importem funció, name nom de referència a la ruta més fàcil de gestionar per canvis
-    path("", views.home, name="home"),
+    path("home", views.home, name="home"),
    
-    path("tags", views.tags, name="tags"),
+    path("introduirrecepta", views.introduirrecepta, name="introduirrecepta"),
     
     # del específic al general!!!! si poso paràmetre aquesta té més força que la genèrica!!!
-    path("if/<str:nom>", views.condicional, name="if"),
-    path("if", views.condicional, name="if"),
+    path("login", views.login, name="login"),
+    path("receptes", views.receptes, name="receptes"),
     
-    path("for", views.bucle, name="for"),
+    path("register", views.register, name="register"),
     
-    path("herencia", views.herencia, name="herencia"),
+    path("faqs", views.faqs, name="faqs"),
     
-    path("errors/<str:nom>", views.errors, name="fallo"),
-    path("errors", views.errors, name="fallo"),
-
+    path("contact", views.contact, name="contact"),
 ]

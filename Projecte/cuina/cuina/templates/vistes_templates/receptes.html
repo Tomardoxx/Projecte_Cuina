@@ -1,0 +1,59 @@
+<!--LA FORMA CORRECTE D'UTILITZAR EL TEMPLATE!!!!!-->
+<!-- agafem plantilla base -->
+{% extends "base.html" %}
+<!-- obligatori pel CSS -->
+{% load static %} 
+
+<!-- importem el block que tenim com a title i per poder relacionar HTML i CSS important static què és on 
+els tenim aquests fitxers de l'app -->
+{% block title %}
+Home
+{% endblock %}
+
+{% block link_css %}
+    <link rel="stylesheet" href="{% static 'vistes_templates/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'vistes_templates/css/receptes.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include "vistes_templates/includes/header.html" %}
+    <main>
+        <h2>Receptes de Durums</h2>
+        <div class="recipe">
+            <h3>Durum Clàssic</h3>
+            <p>Ingredients: Pa de durum, carn, enciam, tomàquet, salsa.</p>
+            <p>Instruccions: Asar la carn, col·locar en el pa amb els ingredients i enrotllar.</p>
+        </div>
+        <div class="recipe">
+            <h3>Durum Vegetarià</h3>
+            <p>Ingredients: Pa de durum, falafel, enciam, tomàquet, salsa tahini.</p>
+            <p>Instruccions: Fregir el falafel, col·locar en el pa amb els ingredients i enrotllar.</p>
+        </div>
+
+        <h2>Receptes de Pizzas</h2>
+        <div class="recipe">
+            <h3>Pizza Margherita</h3>
+            <p>Ingredients: Massa de pizza, salsa de tomàquet, mozzarella, albahaca.</p>
+            <p>Instruccions: Estendre la massa, afegir salsa i formatge, coure a 220°C.</p>
+        </div>
+        <div class="recipe">
+            <h3>Pizza Pepperoni</h3>
+            <p>Ingredients: Massa de pizza, salsa de tomàquet, mozzarella, pepperoni.</p>
+            <p>Instruccions: Estendre la massa, afegir salsa i pepperoni, coure a 220°C.</p>
+        </div>
+
+        <h2>Receptes de Hamburgueses</h2>
+        <div class="recipe">
+            <h3>Hamburguesa Clàssica</h3>
+            <p>Ingredients: Pa d'hamburguesa, carn, enciam, tomàquet, ceba, salsa.</p>
+            <p>Instruccions: Cuinar la carn, col·locar en el pa amb els ingredients.</p>
+        </div>
+        <div class="recipe">
+            <h3>Hamburguesa Vegetariana</h3>
+            <p>Ingredients: Pa d'hamburguesa, hamburguesa de cigrons, enciam, tomàquet, salsa.</p>
+            <p>Instruccions: Cuinar l'hamburguesa, col·locar en el pa amb els ingredients.</p>
+        </div>
+        <a href="./introduirrecepta.html" class="btn">Introduir Nova Recepta</a>
+    </main>
+{% include "vistes_templates/includes/footer.html" %}
+{% endblock content %}

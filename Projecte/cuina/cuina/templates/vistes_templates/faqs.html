@@ -1,0 +1,57 @@
+<!--LA FORMA CORRECTE D'UTILITZAR EL TEMPLATE!!!!!-->
+<!-- agafem plantilla base -->
+{% extends "base.html" %}
+<!-- obligatori pel CSS -->
+{% load static %} 
+
+<!-- importem el block que tenim com a title i per poder relacionar HTML i CSS important static què és on 
+els tenim aquests fitxers de l'app -->
+{% block title %}
+Home
+{% endblock %}
+
+{% block link_css %}
+    <link rel="stylesheet" href="{% static 'vistes_templates/css/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include "vistes_templates/includes/header.html" %}
+<br><br><br><br><br><br>
+    <main>
+                    <details>
+        <summary>¿Qué tipos de kebab ofrecen en su página?</summary>
+        <p>Ofrecemos kebabs clásicos como pollo, ternera, cordero y opciones vegetarianas con falafel o verduras asadas, además de combos y wraps.</p>
+    </details>
+    <details>
+        <summary>¿Puedo personalizar mi kebab?</summary>
+        <p>Sí, puedes elegir el tipo de carne, el pan o wrap, salsas y toppings según tu gusto.</p>
+    </details>
+    <details>
+        <summary>¿Cómo se preparan los kebabs para que sean auténticos?</summary>
+        <p>Nuestros kebabs se preparan con carne marinada durante horas y cocida a la parrilla o rotisserie, combinada con verduras frescas y pan recién horneado.</p>
+    </details>
+    <details>
+        <summary>¿Ofrecen opciones vegetarianas o veganas?</summary>
+        <p>Sí, tenemos kebabs vegetarianos con falafel, hummus y verduras, y algunas salsas son veganas.</p>
+    </details>
+    <details>
+        <summary>¿Cuál es la mejor manera de recalentar un kebab en casa?</summary>
+        <p>Lo ideal es calentarlo en el horno a 180 °C durante 5–10 minutos para que el pan no se humedezca y la carne mantenga su sabor.</p>
+    </details>
+    <details>
+        <summary>¿Las salsas contienen gluten o lácteos?</summary>
+        <p>Algunas salsas como la de yogur contienen lácteos; la de tahini o picante suele ser vegana y sin gluten. Siempre revisa la información específica en cada receta.</p>
+    </details>
+    <details>
+        <summary>¿Se puede congelar un kebab preparado?</summary>
+        <p>Se recomienda congelar solo la carne o los ingredientes por separado. El pan y los vegetales frescos pierden textura al descongelarse.</p>
+    </details>
+    <details>
+        <summary>¿Cómo hago que un kebab casero quede jugoso y sabroso?</summary>
+        <p>Marina la carne con especias, aceite y limón, cocina a fuego medio-alto y acompaña con verduras frescas y salsa justo antes de servir para mantener todo jugoso y sabroso.</p>
+    </details>
+
+    </main>
+    <br><br><br><br><br><br>
+{% include "vistes_templates/includes/footer.html" %}
+{% endblock content %}

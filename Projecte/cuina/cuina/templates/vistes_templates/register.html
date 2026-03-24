@@ -1,0 +1,43 @@
+<!--LA FORMA CORRECTE D'UTILITZAR EL TEMPLATE!!!!!-->
+<!-- agafem plantilla base -->
+{% extends "base.html" %}
+<!-- obligatori pel CSS -->
+{% load static %} 
+
+<!-- importem el block que tenim com a title i per poder relacionar HTML i CSS important static què és on 
+els tenim aquests fitxers de l'app -->
+{% block title %}
+Register
+{% endblock %}
+
+{% block link_css %}
+    <link rel="stylesheet" href="{% static 'vistes_templates/css/register-login.css' %}">
+{% endblock %}
+
+{% block content %}
+    <form class="formulari_registre" action="POST">
+        <label for="usuari">Usuari:</label>
+        <input id="usuari" name="usuari" placeholder="Introduce tu usuario" type="text"><br>
+
+        <label for="nom">Nom:</label>
+        <input id="nom" name="nom" placeholder="Introduce tu nombre" type="text"><br>
+
+        <label for="cognoms">Cognoms:</label>
+        <input id="cognoms" name="cognoms" placeholder="Introduce tus apellidos" type="text"><br>
+
+        <label for="telefon">Telefon:</label>
+        <input id="telefon" name="telefon" placeholder="Introduce tu teléfono" type="text"><br>
+
+        <label for="email">Email:</label>
+        <input id="email" name="email" placeholder="Introduce tu email" type="email"><br>
+
+        <label for="contrasenya">Contrasenya:</label>
+        <input id="contrasenya" name="contrasenya" placeholder="Introduce tu contraseña" type="password"><br>
+
+        <button type="submit" src="index.html">Enviar formulario</button>
+        <p style="text-align:center; margin-top:15px;">
+            ¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesion</a><br><br>
+            <a href="{% url 'home' %}">Entrar como invitado</a>
+        </p>
+    </form>
+{% endblock content %}

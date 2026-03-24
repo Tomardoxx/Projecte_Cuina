@@ -1,0 +1,29 @@
+<!--LA FORMA CORRECTE D'UTILITZAR EL TEMPLATE!!!!!-->
+<!-- agafem plantilla base -->
+{% extends "base.html" %}
+<!-- obligatori pel CSS -->
+{% load static %} 
+
+<!-- importem el block que tenim com a title i per poder relacionar HTML i CSS important static què és on 
+els tenim aquests fitxers de l'app -->
+{% block title %}
+Home
+{% endblock %}
+
+{% block link_css %}
+    <link rel="stylesheet" href="{% static 'vistes_templates/css/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include "vistes_templates/includes/header.html" %}
+    <main>
+        <section class="section">
+            <img class="principal" src="{% static 'vistes_templates/img/principal.jpg' %}" alt="foto cuina">
+            <div class="overlay">
+                <h1>Encara no tenim aquesta funcionalitat</h1>
+            </div>
+        </section>
+    </main>
+
+{% include "vistes_templates/includes/footer.html" %}
+{% endblock content %}

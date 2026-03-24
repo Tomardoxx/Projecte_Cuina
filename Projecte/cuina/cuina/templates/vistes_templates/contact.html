@@ -1,0 +1,53 @@
+<!--LA FORMA CORRECTE D'UTILITZAR EL TEMPLATE!!!!!-->
+<!-- agafem plantilla base -->
+{% extends "base.html" %}
+<!-- obligatori pel CSS -->
+{% load static %} 
+
+<!-- importem el block que tenim com a title i per poder relacionar HTML i CSS important static què és on 
+els tenim aquests fitxers de l'app -->
+{% block title %}
+Contacte
+{% endblock %}
+
+{% block link_css %}
+    <link rel="stylesheet" href="{% static 'vistes_templates/css/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include "vistes_templates/includes/header.html" %}
+    <main>
+        <section class="contacte-section">
+            <div class="contacte-container">
+                <h2>Contacta amb Nosaltres</h2>
+                <p class="contacte-subtitle">Tens alguna pregunta o suggeriment? Omple el formulari i ens posarem en contacte amb tu aviat.</p>
+                
+                <form class="contacte-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correu Electrònic</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assumpte">Assumpte</label>
+                        <input type="text" id="assumpte" name="assumpte" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="missatge">Missatge</label>
+                        <textarea id="missatge" name="missatge" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar Missatge</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+{% include "vistes_templates/includes/footer.html" %}
+{% endblock content %}

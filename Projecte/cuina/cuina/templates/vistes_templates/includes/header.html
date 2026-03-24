@@ -1,0 +1,15 @@
+    {% load static %} 
+    <header>
+        <img class="logo" src="{% static 'vistes_templates/img/logo.png' %}" alt="logo Kebab">
+        <a href="{% url 'home' %}"><h1>Kebab</h1></a>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Inici</a></li>
+                <li><a>Receptes</a></li>
+                <li><a>Introduir Recepta</a></li>
+                <li><a href="{% url 'faqs' %}">Faqs</a></li>
+                <li><a href="{% url 'contact' %}">Contacte</a></li>
+                <li><a class="login" href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
